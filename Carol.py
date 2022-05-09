@@ -34,16 +34,13 @@ def CKKSEvalFunc(enc_confirmed, enc_deaths, FIPS_lookup):
 
     # print('Total confirmed cases in US since 1/22/20')
     # func = (enc_confirmed[latest_record_date] - enc_confirmed['1/22/20']).sum()
-    # return [func]
 
     # print('Total deaths in US since 1/22/20')
     # func = (enc_deaths[latest_record_date] - enc_deaths['1/22/20']).sum()
-    # return [func]
 
     # print('Confirmed cases from last week (' + last_week_date + '-' + latest_record_date + ') in Queens, New York')
     # FIPSindicator = getFIPSInd(FIPS_lookup, 'Queens', 'New York')
     # func = (enc_confirmed[latest_record_date] - enc_confirmed[last_week_date]).dot(FIPSindicator)
-    # return [func]
 
     # print('Confirmed cases from last week (' + last_week_date + '-' + latest_record_date + ') of California and New York State')
     # FIPSindicator_cali = getFIPSInd(FIPS_lookup, State='California')
@@ -55,7 +52,6 @@ def CKKSEvalFunc(enc_confirmed, enc_deaths, FIPS_lookup):
     FIPSindicator_caliandnys = np.add(Public.getFIPSInd(FIPS_lookup, State='California'), Public.getFIPSInd(FIPS_lookup, State='New York'))
     print('Confirmed cases sum from last week (' + last_week_date + '-' + Public.latest_record_date + ') in California and New York State')
     func = (enc_confirmed[Public.latest_record_date] - enc_confirmed[last_week_date]).dot(FIPSindicator_caliandnys)
-    # return [func]
 
     with open(Public.enc_result_path, 'wb') as f:
         pickle.dump(func.serialize(), f)
@@ -67,7 +63,6 @@ def BFVEvalFunc(enc_confirmed, enc_deaths, FIPS_lookup):
     # FIPSindicator = getFIPSInd(FIPS_lookup, 'Queens', 'New York')
     # print('Confirmed cases from last week (' + last_week_date + '-' + latest_record_date + ') in Queens, New York')
     # func = (enc_confirmed[latest_record_date] - enc_confirmed[last_week_date]).dot(FIPSindicator)
-    # return [func]
 
     # print('Confirmed cases from last week (' + last_week_date + '-' + latest_record_date + ') of California and New York State')
     # FIPSindicator_cali = getFIPSInd(FIPS_lookup, State='California')
@@ -79,7 +74,6 @@ def BFVEvalFunc(enc_confirmed, enc_deaths, FIPS_lookup):
     FIPSindicator_caliandnys = np.add(Public.getFIPSInd(FIPS_lookup, State='California'), Public.getFIPSInd(FIPS_lookup, State='New York'))
     print('Confirmed cases sum from last week (' + last_week_date + '-' + Public.latest_record_date + ') in California and New York State')
     func = (enc_confirmed[Public.latest_record_date] - enc_confirmed[last_week_date]).dot(FIPSindicator_caliandnys)
-    # return [func]
 
     with open(Public.enc_result_path, 'wb') as f:
         pickle.dump(func.serialize(), f)
