@@ -1,4 +1,4 @@
-# Computation Ove Encrypted Data
+# Computation Over Encrypted Data
 
 This project is a remote calculation over homomorphic encrypted data based on JHU CSSE COVID-19 Data.
 
