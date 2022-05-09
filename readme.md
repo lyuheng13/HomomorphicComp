@@ -12,9 +12,9 @@ The script Carol will imitage the behavior of a server receiving encrypted data 
 ## Installation
 
 ```bash
-$ pip install tenseal
+$ pip install -r requirements.txt
 ```
 
 ## Team Member
-Ruichen Yang \
-Yuheng Zhong
+Ruichen Yang, ry2172 \
+Yuheng Zhong, yz6422
