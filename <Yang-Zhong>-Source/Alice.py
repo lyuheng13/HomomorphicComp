@@ -88,3 +88,4 @@ def decrypt(scheme):
             enc_result = ts.bfv_vector_from(context, pickle.load(f))
     result = abs(round(enc_result.decrypt()[0]))
     print(scheme, 'result:', result)
+    return result

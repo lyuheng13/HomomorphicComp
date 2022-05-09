@@ -35,8 +35,7 @@ def BFVEvalFunc2(enc_confirmed, enc_deaths, FIPS_lookup):
     with open(Public.enc_result_path, 'wb') as f:
         pickle.dump(func.serialize(), f)
 
-
-FIPS_lookup = Alice.dataProcess('CKKS')
+FIPS_lookup = Alice.dataProcess('BFV')
 enc_confirmed, enc_deaths = Carol.fetchFHEData('BFV')
 result = []
 
@@ -47,6 +46,7 @@ BFVEvalFunc2(enc_confirmed, enc_deaths, FIPS_lookup)
 result.append(Alice.decrypt('BFV'))
 print('Average confirmed cases in California and NYS is', round(np.mean(result)))
 
+result = []
 # knowledge 1 OR/AND knowledge 2
 BFVEvalFunc1(enc_confirmed, enc_deaths, FIPS_lookup)
 result.append(Alice.decrypt('BFV'))
